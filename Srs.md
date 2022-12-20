@@ -1,12 +1,13 @@
 # ManagementInformationSystem
-##Document: System Requirement Specification Document
-Title:
+# Document:
+System Requirement Specification Document
+# Title:
 System Requirement Specification for Management Information System.
 
-Team:
+# Team:
 
 
-Objective (Purpose):
+#  Objective (Purpose):
 The Management Information System aims Interelating, Coordinating & Integrating the data from different subsystems by providing informations to facilitate and enhance the working of the subsystems & acheive synergism. 
 It also aims to represent the data in a precise and summarised manner on the respective dashbaords.
 
