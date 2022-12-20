@@ -1,5 +1,5 @@
 # Solution
-## Information Management System
+## Management Information System
 
 Welcome to our project
 
