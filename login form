@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function hello(){
+        document.getElementById("success").innerHTML="Submitted Successfully!!!";
+    }
+</script>
+<body>
+    <div>
+        <fieldset style="width:60% ; align-content: center;">
+
+            <legend>
+                <h3>Login form</h3>
+            </legend>
+            <table style="width: 40%;">
+                <tr>
+                    <td>
+                        <label for="name">Name</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" name="name" placeholder="enter name">
+                    </td>
+
+                </tr>
+                <br>
+                <tr>
+                    <td>
+                        <label for="uname">User Name</label>
+                    </td>
+                    <td>
+                        <input type="text" id="uname" name="uname" placeholder="enter user name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="pswrd">Password</label>
+                    </td>
+                    <td>
+                        <input type="text" id="pswrd" name="pswrd" placeholder="enter valid password"
+                            pattern="(?=^.{8}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="city">City</label>
+                    </td>
+                    <td>
+                        <input type="text" id="city" name="city" placeholder="enter city">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" name="btn" id="btn" onclick="hello()" >Submit</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+
+            </table>
+        </fieldset>
+    </div>
+    <div id="success"></div>
+</body>
+
+</html>
