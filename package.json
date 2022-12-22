@@ -1,0 +1,22 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "Welcome to our project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shrutisinghhh/Solution.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shrutisinghhh/Solution/issues"
+  },
+  "homepage": "https://github.com/shrutisinghhh/Solution#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

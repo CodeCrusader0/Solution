@@ -19,7 +19,6 @@ mongoose.connect(url,{
     }
 });
 
-
 //middleware
 
 app.use(bodyparser.json());
