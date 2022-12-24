@@ -24,13 +24,13 @@ create table Faculties
 );
 
 
-create table Student(
+create table Students(
        Id int not null AUTO_INCREMENT primary key,
        pwd varchar(20),
        name varchar(50),
        Age int,
        Course varchar(20),
-       Fee double,
+       Fees double (9,2) not null,
        Admission Date,
        Address varchar(50));
 
