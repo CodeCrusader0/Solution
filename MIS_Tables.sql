@@ -17,7 +17,7 @@ create table Faculty(
      Description varchar(500),
      Experience int,
      Expertise varchar(50),
-     Salary float,
+     Salary double,
      ContactNumber varchar(10)
      Email varchar(50));
 
@@ -28,7 +28,7 @@ create table Student(
        name varchar(50),
        Age int,
        Course varchar(20),
-       Fee float,
+       Fee double,
        Admission Date,
        Address varchar(50));
 
@@ -36,7 +36,7 @@ Create table Course(
      Id int primary key,
      Name varchar(50),
      Duration varchar(20),
-     Fees int,
+     Fees double,
      Description varchar(50),
      StartDate Date,
 EndDate Date);
