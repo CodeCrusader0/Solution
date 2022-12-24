@@ -10,17 +10,18 @@ create table Director(
     Email varchar(50));
 
 
-create table Faculty(
-     Id int not null AUTO_INCREMENT primary key,
-     Password not null varchar(20),
-     Name not null varchar(50),
-     Description varchar(500),
-     Experience int,
-     Expertise varchar(50),
-     Salary float,
-     ContactNumber varchar(10)
-     Email varchar(50));
-
+create table Faculties
+(
+    Id int not null AUTO_INCREMENT primary key,
+    Password varchar(20) not null,
+    Name varchar(50) not null,
+    Description varchar(500),
+    Experience int,
+    Expertise varchar(50),
+    Salary double (9,2) not null,
+    ContactNumber varchar(10),
+    Email varchar(50)
+);
 
 create table Student(
        Id int not null AUTO_INCREMENT primary key,
