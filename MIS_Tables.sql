@@ -21,9 +21,12 @@ create table Students(
        Name varchar(50),
        Age int,
        Enrolled_Course varchar(20),
+       Marks int,
        Fees double (9,2) not null,
        Admission Date,
-       Address varchar(50));
+       Address varchar(50),
+       Status varchar(20));
+       
 Create table Courses(
      Id int not null primary key,
      Name varchar(50),
@@ -38,12 +41,12 @@ INSERT INTO Faculties VALUES(2, "Faculty2", "Mrs. Madhura Anturkar","Having prof
 INSERT INTO Faculties VALUES(3, "Faculty3", "Mrs. Kishori","Having professional training experience of 20+ years in Web based Technologies", 100000,9874562312,"faculty3@gmail.com");
 INSERT INTO Faculties VALUES(4, "Faculty4", "Mr. Vishal","Having professional training experience of 20+ years in Data Structure", 100000,9874562313,"faculty4@gmail.com");
 
-INSERT INTO Students VALUES(1, "Student1", "Shruti Singh", 22, "PGDAC" ,800000.00,'2022-09-15', "Pune");
-INSERT INTO Students VALUES(2, "Student2", "Piyush", 23, "PGDAC" ,800000.00,'2022-09-15', "Latur");
-INSERT INTO Students VALUES(3, "Student3", "Prashant", 24, "PGDBDA" ,800000.00,'2022-09-15', "Pune");
-INSERT INTO Students VALUES(4, "Student4", "Chanchal", 22, "PGDBDA" ,800000.00,'2022-09-15', "Indore");
-INSERT INTO Students VALUES(5, "Student5", "Sourav", 23, "PGDAC" ,800000.00,'2022-09-15', "Nagpur");
-INSERT INTO Students VALUES(6, "Student6", "Parth", 22, "PGDITISS" ,800000.00,'2022-09-15', "Nasik");
+INSERT INTO Students VALUES(1, "Student1", "Shruti Singh", 22, "PGDAC", 99 ,800000.00,'2021-09-15', "Pune", "Passed");
+INSERT INTO Students VALUES(2, "Student2", "Piyush", 23, "PGDAC",96 ,800000.00,'2022-09-15', "Latur", "Ongoing");
+INSERT INTO Students VALUES(3, "Student3", "Prashant", 24, "PGDBDA",99 ,800000.00,'2022-09-15', "Pune", "Ongoing");
+INSERT INTO Students VALUES(4, "Student4", "Chanchal", 22, "PGDBDA",95 ,800000.00,'2022-09-15', "Indore", "Ongoing");
+INSERT INTO Students VALUES(5, "Student5", "Sourav", 23, "PGDAC",94 ,800000.00,'2022-09-15', "Nagpur", "Ongoing");
+INSERT INTO Students VALUES(6, "Student6", "Parth", 22, "PGDITISS",91 ,800000.00,'2022-09-15', "Nasik", "Ongoing");
 
 INSERT INTO Courses VALUES(1, "PGDAC", "6 Months",800000.00,"The course aims to groom the students to enable them to work on current technology scenarios as well as prepare them to keep pace with the changing face of technology and the requirements of the growing IT industry.",'2022-09-15','2023-03-15' );
 INSERT INTO Courses VALUES(2, "PGDBDA", "6 Months",800000.00,"The Post Graduate Diploma in Big Data Analytics (PG-DBDA) is a fulltime postgraduate course comprising of 9 Compulsory Modules and a Project.",'2022-09-15','2023-03-15' );
