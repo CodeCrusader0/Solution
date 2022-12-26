@@ -1,87 +1,108 @@
 var express=require("express");
 var mongoose=require("mongoose");
 var schema=mongoose.Schema;
-var router=express.Router();
+var routers=express.Router();
 
-var studschema=new schema({
-    name:String,
-    std:Number,
-    city:String
+var facty=new schema({
+    id:Number,
+    firstname:{type:String,trim:true,required:true},
+    lastname:{type:String,trim:true,required:true},
+    course:String,
+    email:String,
+    gender:String,
+    experience:Number
 });
 
-var stud=mongoose.model("student",studschema,"student");
+var fac=mongoose.model('faculty',facty,'faculty');
 
-router.get("/",function(req,resp){
-    stud.find().exec(function(err,result){
-        if(err){
-            resp.status(500).send("Error Occured");
-        }else{
-            console.log(result);
-            resp.send(result);
-        }
+    routers.get("/faculty",function(req,resp){
+        fac.find().exec(function(err,data){
+            if(err)
+            {
+                resp.status(500).send("Error Required")
+            }
+            else{
+                resp.send(data);
+            }
+        })
     })
 
-});
+// routers.get("/create",function(req,resp){
+//     resp.render('create',{title:'Add Student'});
+// })
 
-router.get("/student/:std",function(req,resp){
-    stud.find({std:req.params.std}).exec(function(err,result){
-        if(err){
-            resp.status(500).send("Nodata found");
-        }else{
-            resp.send(result);
-        }
-    })
-})
 
-router.patch("/student/:std",function(req,resp){
-    stud.findOne({std:req.params.std},function(err,doc){
-        if(err){
-            resp.status(500).send("errpr occured");
-        }else{
-            doc.name=req.body.name;
-            doc.std=req.body.std;
-            doc.city=req.body.city;
-
-            doc.save(function(err,data){
-                if(err){
-                    console.log("error");
-                }else{
-                    console.log("updated successfully");
-                    console.log(data);
-                }
-            })
-        }
-    })
-})
-
-router.delete("/student/:std",function(req,resp){
-    stud.remove({std:req.params.std},function(err){
-        if(err){
-            resp.status(500).send("error");
-        }else{
-            resp.send("Deleted Successfully");
-        }
-    })
-})
-
-router.post("/student",function(req,res){
-
-var studob=new stud({name:req.body.name,   
-    std:req.body.std,
-    city:req.body.city
-
-    });
-
-    studob.save(function(err,data){
-        if(err){
-            res.send("Failed");
+routers.post("/faculty",function(req,res){
+    var newdata=new fac({id:req.body.id,firstname:req.body.firstname,lastname:req.body.lastname,course:req.body.course,email:req.body.email,gender:req.body.gender,experience:req.body.experience});
+    console.log(newdata);
+    newdata.save(function(err,data){
+        if(err)
+        {
+            console.log("In if");
+            console.log(data);
+            res.send("Not inserted");
         }
         else{
-            console.log("data added");
+            console.log("In else");
+            console.log(data);
             res.send(data);
         }
     })
 
 });
 
-module.exports=router;
+routers.get("/faculty/:id",function(req,res){
+    fac.findOne({id:req.params.id}).exec(function(err,data){
+        if(err)
+        {
+            console.log("in if");
+            res.send("No data is edited");
+        }
+        else{
+            console.log(data);
+            res.send(data);
+        }
+    });
+})
+
+routers.put("/faculty/:id",function(req,res){
+    console.log(req.body);
+    fac.findOne({id:req.params.id},function(err,doc){
+        console.log("In findOne");
+        // console.log(doc);
+        
+        if(err)
+        {
+            res.send("Failed");
+        }
+        else{
+            console.log("in else");
+            doc.id=req.body.id,
+            doc.firstname=req.body.firstname,
+            doc.lastname=req.body.lastname,
+            doc.course=req.body.course,
+            doc.email=req.body.email,
+            doc.gender=req.body.gender,
+            doc.experience=req.body.experience
+            console.log(doc);
+            doc.save(function(data){
+                    res.send(data);
+                
+            })
+        }
+    })
+});
+
+routers.delete("/faculty/:id",function(req,res){
+    fac.remove({id:req.params.id},function(err,data){
+        if(err)
+        {
+            res.send("Deletion failed");
+        }
+        else{
+            res.send("Successfull");
+        }
+    })
+});
+
+    module.exports=routers;
