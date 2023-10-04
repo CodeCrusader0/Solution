@@ -87,4 +87,6 @@ const Facultyadd=(props)=>{
     )
 }
 
+
+
 export default Facultyadd;
